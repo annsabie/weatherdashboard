@@ -39,7 +39,7 @@ searchButton.click(function () {
 
             var timeUTC = new Date(response.dt * 1000);
             currentCity.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
-            currentCity.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+            currentCity.append("<img src='http://openweathermap.org/img/w/" + response.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
            
             var currentTemp = currentCity.append("<p>");
             currentCity.append(currentTemp);
@@ -79,7 +79,7 @@ searchButton.click(function () {
             day.forEach(function (i) {
               var FiveDayTimeUTC1 = new Date(response.list[i].dt * 1000);
               FiveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
-              fiveDay.append("<div class=fiveDayInfo>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>");
+              fiveDay.append("<div class=fiveDayInfo>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}.png">` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>");
             })
           });
         }
