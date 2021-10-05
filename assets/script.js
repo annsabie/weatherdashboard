@@ -50,7 +50,9 @@ searchButton.click(function () {
             currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
 
 
-            var uvUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=0f2b4b1ea92cc74ae9d1aa0afb8e31d8&lat=${response.coord.lat}&lon=${response.coord.lon}`;
+            var uvAPI = "0f2b4b1ea92cc74ae9d1aa0afb8e31d8";
+
+            var uvUrl = "https://api.openweathermap.org/data/2.5/onecall?&lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=" + uvAPI;
 
             $.ajax({
                 url: uvUrl,
